@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 
+//Se crea el routering como variable
 const pasos = [
     { paso: 1, nombre: "Menu", url: '/' },
     { paso: 2, nombre: "Resumen", url: '/resumen' },

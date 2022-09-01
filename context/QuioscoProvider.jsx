@@ -44,7 +44,7 @@ const QuioscoProvider = ({ children }) => {
     }
 
     //Se aplica el destrcturing a categoriaID e imagen para que nos e guarde en el state de producto
-    const handleAgregarPedido = ({ categoriaId, imagen, ...producto }) => {
+    const handleAgregarPedido = ({ categoriaId, ...producto }) => {
         //Evitar produictos repetidos
         if (pedido.some(productoState => productoState.id === producto.id)) {
             //si el priducto existe, se actualiza los pedidos
