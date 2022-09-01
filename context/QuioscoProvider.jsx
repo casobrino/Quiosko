@@ -43,6 +43,7 @@ const QuioscoProvider = ({ children }) => {
         setModal(!modal)
     }
 
+
     //Se aplica el destrcturing a categoriaID e imagen para que nos e guarde en el state de producto
     const handleAgregarPedido = ({ categoriaId, ...producto }) => {
         //Evitar produictos repetidos
@@ -62,6 +63,19 @@ const QuioscoProvider = ({ children }) => {
 
     }
 
+    const handleEditarCantidades = (id) => {
+        const productoActualizar = pedido.filter(producto => producto.id === id)
+        setProducto(productoActualizar[0])
+        //Iniciamos el modal de nuevo para cambiarlo de estado
+        setModal(!modal)
+    }
+
+    const handleEliminarProducto = (id) => {
+        const pedidoActualizado = pedido.filter(producto => producto.id !== id)
+        setPedido(pedidoActualizado)
+
+    }
+
     return (
         //Envia los datos generales al provaider
         <QuioscoContext.Provider
@@ -75,7 +89,8 @@ const QuioscoProvider = ({ children }) => {
                 handleSetProducto,
                 handleChangeModal,
                 handleAgregarPedido,
-
+                handleEditarCantidades,
+                handleEliminarProducto
             }}
         >
             {children}

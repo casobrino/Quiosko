@@ -1,5 +1,5 @@
 import Image from "next/dist/client/image";
-import { formatearDinero } from '../helpers'
+import { formatearDinero } from '../helpers';
 import useQuiosco from "../Hooks/UseQuiosco";
 const Producto = ({ producto }) => {
     const { nombre, imagen, precio } = producto
